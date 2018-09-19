@@ -21,7 +21,7 @@ title_separator          : "-"
 name                     : "rook1e"
 description              : "H4cker"
 url                      : "shell5h0ck.github.io"
-baseurl                  : "/"
+baseurl                  : ""
 repository               : "shell5h0ck/"
 teaser                   : "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)

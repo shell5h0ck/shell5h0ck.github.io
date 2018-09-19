@@ -104,11 +104,11 @@ author:
   avatar           : "/assets/images/bio-photo.jpg"
   bio              : "start from rook1e"
   location         : "KR"
-  email            :
+  email            : "shellshock_@naver.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: mailto:shellshock_@naver.com
+      url: "mailto:shellshock_@naver.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       url: "https://blog.naver.com/shellshock_"

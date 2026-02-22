@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>자백봇 · 원신/메이플 유틸리티</title>
+  <meta name="description" content="원신(레진/선계 알림, 자동 출석)과 메이플(성장 히스토리) 유틸리티를 제공하는 디스코드 봇 — 자백봇"/>
+  <link rel="stylesheet" href="./assets/styles.css"/>
+</head>
+<body>
+  <div class="nav">
+    <div class="container nav-inner">
+      <div class="brand">🤖 자백봇 <span class="badge">Genshin · Maple</span></div>
+      <div class="nav-links">
+        <a class="btn" href="./posts/2026-02-22-hoyolab-cookie.html">📌 원신 쿠키 등록</a>
+        <a class="btn" href="./contact.html">✉️ 문의</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container hero">
+    <div class="hero-grid">
+      <div class="card card-pad fade">
+        <div class="pill">⚡ 디스코드에서 바로 쓰는 유틸</div>
+        <h1 class="h-title">원신·메이플<br/>필수 기능만 깔끔하게</h1>
+        <p class="h-sub">
+          자백봇은 “과한 기능” 대신, 자주 쓰는 것만 빠르고 보기 좋게 제공합니다.<br/>
+          원신은 레진/선계 알림과 자동 출석, 메이플은 최근 성장 히스토리를 중심으로 구성했어요.
+        </p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <a class="btn" href="./posts/2026-02-22-hoyolab-cookie.html">🚀 쿠키 등록 방법 보기</a>
+          <a class="btn" href="./contact.html">📨 문의/제안하기</a>
+        </div>
+        <div class="kpis">
+          <div class="kpi">🔔 임계치 알림 (80/100 등)</div>
+          <div class="kpi">📅 자동 출석 (06:00 KST)</div>
+          <div class="kpi">📈 메이플 7일 성장</div>
+        </div>
+      </div>
+      <div class="card card-pad fade">
+        <h3 style="margin:0 0 10px">바로 읽을 글</h3>
+        <p class="h-sub" style="margin:0 0 12px">
+          원신 연동은 “HoYoLAB 쿠키”가 필요합니다. 아래 가이드를 그대로 따라 하면 끝.
+        </p>
+        <a class="btn" style="width:100%;justify-content:center" href="./posts/2026-02-22-hoyolab-cookie.html">📌 자백봇 원신 쿠키 등록 방법</a>
+        <hr/>
+        <div class="pill">🧩 사이트는 GitHub Pages로 배포 가능</div>
+        <p class="h-sub" style="margin-top:10px">
+          이 페이지는 정적 HTML/CSS/JS로 만들어져서 빌드 없이도 바로 배포할 수 있어요.
+        </p>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card card-pad fade">
+        <h3>🎮 원신</h3>
+        <p>레진/선계 알림을 원하는 기준(%)으로 설정하고, 최대 도달까지 남은 시간을 함께 봅니다.</p>
+      </div>
+      <div class="card card-pad fade">
+        <h3>🍁 메이플</h3>
+        <p>최근 7일 성장(레벨/경험치)을 보기 쉽게 정리합니다. 첫 조회 시에도 과거 날짜 데이터를 채웁니다.</p>
+      </div>
+      <div class="card card-pad fade">
+        <h3>🧼 깔끔한 UI</h3>
+        <p>한 메시지로만 진행되도록 구성해 채널이 지저분해지지 않게 만들었습니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      © 2026 zibai-bot · GitHub Pages용 정적 사이트 템플릿
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="./assets/app.js"></script>
+</body>
+</html>

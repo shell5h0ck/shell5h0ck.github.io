@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>자백봇 원신 쿠키 등록 방법 (HoYoLAB)</title>
+  <meta name="description" content="자백봇 원신 기능을 쓰기 위한 HoYoLAB 쿠키 복사/등록 방법을 비전공자도 따라할 수 있게 설명합니다."/>
+  <link rel="stylesheet" href="../assets/styles.css"/>
+</head>
+<body>
+  <div class="nav">
+    <div class="container nav-inner">
+      <div class="brand"><a href="../index.html">🤖 자백봇</a> <span class="badge">Guide</span></div>
+      <div class="nav-links">
+        <a class="btn" href="../contact.html">✉️ 문의</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container post">
+    <div class="pill fade">📌 가이드</div>
+    <h1 class="fade">자백봇 원신 쿠키 등록 방법 (HoYoLAB)</h1>
+    <div class="meta fade">작성: 2026-02-22 22:30 (KST) · 대상: 크롬/엣지 사용자</div>
+
+    <div class="step fade">
+      <h3><span class="num">01</span>준비물</h3>
+      <ul>
+        <li>HoYoLAB(호요랩) <b>로그인</b>이 되어 있어야 합니다.</li>
+        <li>크롬 또는 엣지(Chromium 기반 브라우저)</li>
+        <li>자백봇을 사용할 수 있는 디스코드 서버</li>
+      </ul>
+    </div>
+
+    <div class="step fade">
+      <h3><span class="num">02</span>개발자 도구 열기</h3>
+      <ul>
+        <li><b>F12</b> 또는 <b>Ctrl + Shift + I</b></li>
+        <li>상단에서 <b>Network</b> 탭을 클릭</li>
+        <li>페이지를 한 번 새로고침(<b>F5</b>)</li>
+      </ul>
+      <div class="code" id="keys">F12
+Network 탭
+F5 (새로고침)</div>
+      <button class="btn copy" data-copy="#keys">📋 복사</button>
+    </div>
+
+    <div class="step fade">
+      <h3><span class="num">03</span>Cookie 값 복사하기 (핵심)</h3>
+      <p>Network 목록에서 <b>home</b> 같은 요청을 클릭한 뒤, 오른쪽에서 아래 순서로 이동합니다.</p>
+      <ul>
+        <li><b>Headers</b> 탭</li>
+        <li><b>Request Headers</b> 섹션</li>
+        <li><b>Cookie:</b> 줄을 찾아서 <b>전체를 복사</b></li>
+      </ul>
+
+      <div class="img-wrap" style="margin-top:12px">
+        <img data-zoom="../assets/hoyolab-cookie-blur.png" src="../assets/hoyolab-cookie-blur.png" alt="Cookie 헤더 위치 (쿠키 값은 블러 처리됨)"/>
+      </div>
+
+      <hr/>
+      <p><b>복사할 때 포인트</b></p>
+      <ul>
+        <li>쿠키 값(긴 문자열)은 그대로 복사하되, 어디에 공개하지 마세요.</li>
+        <li><b>ltuid_v2</b>, <b>ltoken_v2</b>, <b>cookie_token_v2</b>가 포함되어 있으면 보통 정상입니다.</li>
+      </ul>
+    </div>
+
+    <div class="step fade">
+      <h3><span class="num">04</span>디스코드 봇에 등록</h3>
+      <p>디스코드에서 <b>/자백 → 원신 → 쿠키 등록</b>을 눌러, 방금 복사한 문자열을 그대로 붙여넣으면 됩니다.</p>
+      <div class="pill">🔒 쿠키는 로그인 세션입니다. 유출되면 계정이 위험할 수 있어요.</div>
+    </div>
+
+    <div class="step fade">
+      <h3><span class="num">05</span>자주 묻는 문제</h3>
+      <ul>
+        <li><b>검증 실패</b>: 쿠키가 만료됐거나, Cookie 줄을 일부만 복사했을 가능성이 큽니다. 다시 로그인 후 재시도하세요.</li>
+        <li><b>자동 출석이 안 됨</b>: cookie_token_v2가 누락된 경우가 많습니다. Cookie 줄에 포함되어 있는지 확인하세요.</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <div>이 문서는 개인용 가이드 템플릿입니다. 실제 서비스 운영 시 보안/약관을 함께 확인하세요.</div>
+    </div>
+  </div>
+
+  <div id="imgModal" class="modal">
+    <img id="imgModalImg" alt="확대 이미지"/>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="../assets/app.js"></script>
+</body>
+</html>

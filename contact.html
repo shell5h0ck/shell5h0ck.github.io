@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>문의 · 자백봇</title>
+  <link rel="stylesheet" href="./assets/styles.css"/>
+</head>
+<body>
+  <div class="nav">
+    <div class="container nav-inner">
+      <div class="brand"><a href="./index.html">🤖 자백봇</a> <span class="badge">Contact</span></div>
+      <div class="nav-links">
+        <a class="btn" href="./posts/2026-02-22-hoyolab-cookie.html">📌 원신 쿠키 등록</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container post">
+    <h1 class="fade">✉️ 문의 / 제안</h1>
+    <div class="meta fade">원하는 연락 수단을 적어두면, 아래 버튼으로 “문의 메시지”를 한 번에 복사할 수 있어요.</div>
+
+    <div class="grid2">
+      <div class="step fade">
+        <h3><span class="num">01</span>연락 수단</h3>
+        <p>아래 칸은 “내가 나중에 복사해서 붙여넣기” 용도예요. 사이트는 정적이라 자동 전송은 하지 않습니다.</p>
+        <div style="display:grid;gap:10px;margin-top:12px">
+          <label>Discord</label>
+          <input id="c_discord" class="btn" style="width:100%;justify-content:flex-start" placeholder="예) rook1e#0000 또는 @rook1e"/>
+          <label>Email</label>
+          <input id="c_email" class="btn" style="width:100%;justify-content:flex-start" placeholder="예) you@example.com"/>
+          <label>GitHub</label>
+          <input id="c_github" class="btn" style="width:100%;justify-content:flex-start" placeholder="예) https://github.com/yourname"/>
+        </div>
+      </div>
+
+      <div class="step fade">
+        <h3><span class="num">02</span>문의 내용</h3>
+        <p>원하는 내용을 적고 “복사”를 눌러 디스코드/이메일/이슈에 붙여넣어 주세요.</p>
+        <textarea id="c_body" class="btn" style="width:100%;min-height:210px;justify-content:flex-start;align-items:flex-start;white-space:pre-wrap" placeholder="예) 레진 알림 기준을 70/90/100으로 저장했는데 90 알림이 두 번 와요. 로그는 ..."></textarea>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+          <button class="btn" id="copyContact">📋 문의 메시지 복사</button>
+          <a class="btn" href="./index.html">🏠 메인으로</a>
+        </div>
+        <div class="code" id="contactPreview">[문의]
+- Discord: (작성)
+- Email: (작성)
+- GitHub: (작성)
+
+내용:
+(작성)</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="./assets/app.js"></script>
+  <script>
+    const update = ()=>{
+      const d = document.getElementById('c_discord').value || '(작성)';
+      const e = document.getElementById('c_email').value || '(작성)';
+      const g = document.getElementById('c_github').value || '(작성)';
+      const b = document.getElementById('c_body').value || '(작성)';
+      document.getElementById('contactPreview').innerText =
+`[문의]
+- Discord: ${d}
+- Email: ${e}
+- GitHub: ${g}
+
+내용:
+${b}`;
+    };
+    ['c_discord','c_email','c_github','c_body'].forEach(id=>document.getElementById(id).addEventListener('input', update));
+    update();
+    document.getElementById('copyContact').addEventListener('click', async ()=>{
+      await navigator.clipboard.writeText(document.getElementById('contactPreview').innerText.trim());
+      const el = document.getElementById('toast'); el.textContent='복사했습니다'; el.classList.add('show');
+      setTimeout(()=>el.classList.remove('show'), 1600);
+    });
+  </script>
+</body>
+</html>
